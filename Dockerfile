@@ -5,7 +5,7 @@ RUN cd /tmp/statistics && dotnet build -c Release -o /statistics
 
 FROM lazynode/lazyneo:v3.5.0
 
-RUN apt-get install curl
+RUN apt-get install -y curl
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | /bin/bash
 
 COPY --from=build /statistics /neo/Plugins/statistics
