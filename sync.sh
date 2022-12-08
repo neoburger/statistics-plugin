@@ -4,7 +4,7 @@ if [[ -p ".tmp" ]]; then
     rm .tmp
 fi
 mkfifo .tmp
-cat .tmp | (dotnet /neo/neo-cli.dll >> run.log 2>&1 && echo > .tmp)
+cat .tmp | (/neo/neo-cli >> run.log 2>&1 && echo > .tmp)
 
 rm -rf .tmpdir
 mkdir -p .tmpdir/data

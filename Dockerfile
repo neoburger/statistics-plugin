@@ -12,4 +12,4 @@ COPY --from=build /statistics /neo/Plugins/statistics
 COPY sync.sh /sync.sh
 
 WORKDIR /app
-CMD /bin/bash /sync.sh
+CMD /bin/sh /sync.sh
