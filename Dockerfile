@@ -7,9 +7,10 @@ FROM lazynode/lazyneo:v3.5.0
 
 RUN apt-get install -y curl
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | /bin/bash
+RUN apt-get install bash
 
 COPY --from=build /statistics /neo/Plugins/statistics
 COPY sync.sh /sync.sh
 
 WORKDIR /app
-CMD /bin/sh /sync.sh
+CMD /bin/bash /sync.sh
